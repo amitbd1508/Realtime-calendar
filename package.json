@@ -1,0 +1,16 @@
+{
+  "name": "realtime-calender",
+  "version": "1.0.0",
+  "description": "This is a realtime calender event app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencis":{
+  	"express":"*",
+  	"body-parser":"*",
+  	"mongoose":"*"
+  },
+  "author": "amit ghosh",
+  "license": "ISC"
+}
