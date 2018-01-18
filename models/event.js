@@ -50,10 +50,8 @@ module.exports.updateEvent = (id, event, options, callback) => {
         eventDescription: event.eventDescription,
         eventPlace: event.eventPlace,
         eventDate: event.eventDate,
-        eventCreateDate: event.eventCreateDate,
-        eventModifiedDate: Date.now
-
-
+        eventCreateDate: event.eventCreateDate
+        
     }
     Event.findOneAndUpdate(query, update, options, callback);
 }
