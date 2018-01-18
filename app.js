@@ -1,3 +1,16 @@
+/*
+* App running on 3000 port 
+* 
+* 
+* API Description
+* GET : /api/v1/event  get all event 
+* POST : /api/v1/event  create an event 
+* PUT :/api/v1/event/:_id   update an event by id
+* DELETE :/api/v1/event/:_id   delete an event by id
+* 
+* 
+* */
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');

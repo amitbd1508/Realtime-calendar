@@ -1,3 +1,14 @@
+/*
+* Model for Event 
+* 
+* eventTitle
+* eventDescription
+* eventPlace
+* eventTime
+* eventCreateDate
+* eventModifiedDate
+ */
+
 var mongoose=require('mongoose');
 
 //event schema
@@ -29,11 +40,12 @@ var eventSchema=mongoose.Schema({
 });
 var Event =module.exports=mongoose.model('Event',eventSchema);
 
-//get genres
+
 module.exports.getEventById=function(id,callback){
     Event.findById(id,callback);
 
 }
+
 module.exports.getEvents=function(callback,limit){
     Event.find(callback).limit(limit);
 
@@ -43,6 +55,9 @@ module.exports.addEvent=function(event,callback){
 
 }
 
+/*
+* @TODO here i need to work with modified date
+* */
 module.exports.updateEvent = (id, event, options, callback) => {
     var query = {_id: id};
     var update = {

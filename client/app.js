@@ -4,7 +4,7 @@ myApp.config(function($routeProvider){
     $routeProvider
         .when('/', {
             controller:'EventsController',
-            templateUrl: 'views/calender.html'
+            templateUrl: 'views/calendar.html'
          })
         .when('/event/add',{
             controller:'EventsController',
