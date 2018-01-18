@@ -34,7 +34,7 @@ app.post('/api/v1/event', (req, res) => {
     });
 });
 
-app.put('/api/v1/event:_id', (req, res) => {
+app.put('/api/v1/event/:_id', (req, res) => {
     var id = req.params._id;
     var event = req.body;
     console.log(event);
@@ -43,21 +43,20 @@ app.put('/api/v1/event:_id', (req, res) => {
         if(err){
             throw new Error(err.toLocaleString());
         }
-        res.json(event);
+        res.json({'status':'sucess'});
     });
 });
 
-app.delete('/api/v1/event:_id', (req, res) => {
+app.delete('/api/v1/event/:_id', (req, res) => {
     var id = req.params._id;
     Event.removeEvent(id, (err, event) => {
         if(err){
             throw err;
         }
-        res.json(event);
+        res.json({'status':'sucess'});
     });
 });
-/*@Todo: commanting and varivy body
-*
-* */
+
 app.listen(3000);
 console.log("Running on port 3000");
+
