@@ -4,22 +4,33 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
     console.log('EventsController loaded...');
 
 
+    //initaliazing soket
     var  socket= io('http://localhost:9000/',{transports: ['websocket'], upgrade: false});
-
-    console.log(socket);
+    //reload fire when any client write their change in database
     socket.on('reload', function(msg){
-        console.log(msg);
+        //when any change occour on database the a reload event happened
         window.location.href='#/';
 
     });
 
     //These variables MUST be set as a minimum for the calendar to work
+    //calender set to month
     $scope.calendarView = 'month';
+
     $scope.viewDate = new Date();
+
+    //coustom calender type changer
+    $scope.changeCalenderView = function(viewType) {
+        //alert.show('Clicked', event);
+        console.log(event);
+        $scope.calendarView=viewType
+    };
     var actions = [{
         label: '<i class=\'glyphicon glyphicon-pencil\'></i>',
         onClick: function(args) {
-            console.log(args.calendarEvent);
+            console.log(args.calendarEvent.id);
+            window.location.href='#!/event/update/'+args.calendarEvent.id;
+
         }
     }, {
         label: '<i class=\'glyphicon glyphicon-remove\'></i>',
@@ -77,7 +88,7 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
             }
         }
     }
-    console.log(moment());
+
     //api call for get all events
     $scope.getEvents = function(){
 
@@ -87,8 +98,8 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
         }).then(function (success){
             var response = success.data;
             console.log(success);
+            //loop through the response for formatting data to set in the calender
             for (let i = 0; i < response.length; i++) {
-
                 $scope.events.push(
                     {
                         id: response[i]._id,
@@ -97,8 +108,8 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
                         startsAt: moment(response[i].startsAt),
                         endsAt: moment(response[i].endsAt),
                         draggable: true,
+                        actions: actions,
                         resizable: true
-
                     }
                 );
             }
