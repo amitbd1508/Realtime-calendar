@@ -3,6 +3,16 @@ var myApp = angular.module('myApp');
 myApp.controller('EventsController', ['$scope', '$http', '$location', '$routeParams','moment', 'calendarConfig', function($scope, $http, $location, $routeParams,moment,  calendarConfig){
     console.log('EventsController loaded...');
 
+
+    var  socket= io('http://localhost:9000/',{transports: ['websocket'], upgrade: false});
+
+    console.log(socket);
+    socket.on('reload', function(msg){
+        console.log(msg);
+        window.location.href='#/';
+
+    });
+
     //These variables MUST be set as a minimum for the calendar to work
     $scope.calendarView = 'month';
     $scope.viewDate = new Date();
