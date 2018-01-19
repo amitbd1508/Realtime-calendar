@@ -16,15 +16,18 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+//socket variable
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+var port = 9000;
+
 Event =require('./models/event');
 
 // Connect to Mongoose
 mongoose.connect('mongodb://localhost/realtime_event_calendar');
 var db = mongoose.connection;
 
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-var port = 9000;
+
 
 // allow acces a spacific connection from client
 app.use(function(req, res, next) {
@@ -34,21 +37,24 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
     next();
 });
-app.use(express.static(__dirname+'/client'));
 app.use(bodyParser.json());
+app.use(express.static(__dirname+'/client')); //client dir
 
 
+//on new connection
 io.on('connection', function(socket){
     console.log("connected");
 
 });
+
 //soket initialization
 http.listen(port, function(){
     console.log('listening on *:' + port);
 });
 
-
-
+/*
+* @Todo check for missing param in api
+* */
 //when  make a bad request
 app.get('/', (req, res) => {
     res.send('Please use /api/v1/event');
@@ -67,7 +73,7 @@ app.post('/api/v1/event', (req, res) => {
         if(err){
             throw err;
         }
-        res.json(event);
+        res.json({'status':'success'});
         io.emit('reload', 'reload');
 
     });
@@ -78,15 +84,13 @@ app.post('/api/v1/event', (req, res) => {
 app.put('/api/v1/event/:_id', (req, res) => {
     var id = req.params._id;
     var event = req.body;
-    console.log(event);
-    console.log(id);
 
     Event.updateEvent(id, event, {}, (err, event) => {
         if(err){
             throw new Error(err.toLocaleString());
         }
 
-        res.json({'status':'sucess'});
+        res.json({'status':'success'});
         io.emit('reload', 'reload');
     });
 
@@ -98,7 +102,7 @@ app.delete('/api/v1/event/:_id', (req, res) => {
         if(err){
             throw err;
         }
-        res.json({'status':'sucess'});
+        res.json({'status':'success'});
         io.emit('reload', 'reload');
     });
 });
