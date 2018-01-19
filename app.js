@@ -69,6 +69,14 @@ app.delete('/api/v1/event/:_id', (req, res) => {
         res.json({'status':'sucess'});
     });
 });
+app.get('/api/v1/event/:_id', (req, res) => {
+    Event.getEventById(req.params._id, (err, event) => {
+        if(err){
+            throw err;
+        }
+        res.json(event);
+    });
+});
 
 app.listen(3000);
 console.log("Running on port 3000");

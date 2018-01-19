@@ -28,9 +28,18 @@ var eventSchema=mongoose.Schema({
       type : String,
       require: true
     },
+
     eventCreateDate:{
         type : Date,
         default : Date.now
+    },
+    startsAt:{
+        type:Date,
+        default: Date.now()
+    },
+    endsAt:{
+        type:Date,
+        default :Date.now()
     },
     eventModifiedDate:{
         type : Date,

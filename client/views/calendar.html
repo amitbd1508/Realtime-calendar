@@ -1,4 +1,4 @@
-<div >
+<div ng-init="getEvents()">
     <h2 class="text-center">{{ calendarTitle }}</h2>
 
     <div class="row">
@@ -81,8 +81,6 @@
         <thead>
         <tr>
             <th>Title</th>
-            <th>Primary color</th>
-            <th>Secondary color</th>
             <th>Starts at</th>
             <th>Ends at</th>
             <th>Remove</th>
@@ -97,12 +95,8 @@
                         class="form-control"
                         ng-model="event.title">
             </td>
-            <td>
-                <input class="form-control" colorpicker type="text" ng-model="event.color.primary">
-            </td>
-            <td>
-                <input class="form-control" colorpicker type="text" ng-model="event.color.secondary">
-            </td>
+
+
             <td>
                 <p class="input-group" style="max-width: 250px">
                     <input
@@ -160,9 +154,12 @@
             <td>
                 <button
                         class="btn btn-danger"
-                        ng-click="events.splice($index, 1)">
+                        ng-click="removeEvent(events[$index].id)">
                     Delete
                 </button>
+            </td>
+            <td>
+                <a class="btn btn-primary" href="#!/event/update/{{events[$index].id}}">Update</a>
             </td>
         </tr>
         </tbody>
