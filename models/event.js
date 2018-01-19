@@ -74,7 +74,9 @@ module.exports.updateEvent = (id, event, options, callback) => {
         eventDescription: event.eventDescription,
         eventPlace: event.eventPlace,
         eventDate: event.eventDate,
-        eventCreateDate: event.eventCreateDate
+        eventCreateDate: event.eventCreateDate,
+        startsAt: event.startsAt,
+        endsAt: event.endsAt
         
     }
     Event.findOneAndUpdate(query, update, options, callback);

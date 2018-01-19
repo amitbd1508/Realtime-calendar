@@ -68,11 +68,8 @@
 
     <h3 id="event-editor">
         Edit events
-        <button
-                class="btn btn-primary pull-right"
-                ng-click="addEvent()">
-            Add new
-        </button>
+
+        <a class="btn btn-primary pull-right" href="#!/event/add">Add Event</a>
         <div class="clearfix"></div>
     </h3>
 
@@ -93,6 +90,7 @@
                 <input
                         type="text"
                         class="form-control"
+                        readonly
                         ng-model="event.title">
             </td>
 

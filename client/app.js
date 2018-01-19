@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp',['ngRoute','mwl.calendar']);
+var myApp = angular.module('myApp',['ngRoute','mwl.calendar','moment-picker']);
 
 myApp.config(function($routeProvider){
     $routeProvider

@@ -3,9 +3,6 @@ var myApp = angular.module('myApp');
 myApp.controller('EventsController', ['$scope', '$http', '$location', '$routeParams','moment', 'calendarConfig', function($scope, $http, $location, $routeParams,moment,  calendarConfig){
     console.log('EventsController loaded...');
 
-    
-
-
     //These variables MUST be set as a minimum for the calendar to work
     $scope.calendarView = 'month';
     $scope.viewDate = new Date();
@@ -88,10 +85,10 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
                         title: response[i].eventTitle,
                         color: calendarConfig.colorTypes.warning,
                         startsAt: moment(response[i].startsAt),
-                        endsAt: response[i].endsAt,
+                        endsAt: moment(response[i].endsAt),
                         draggable: true,
-                        resizable: true,
-                        actions: actions
+                        resizable: true
+
                     }
                 );
             }
@@ -126,9 +123,14 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
     $scope.updateEvent = function(){
         var id = $routeParams.id;
         var newEvent={
-          eventTitle: $scope.event.eventTitle,
+            eventTitle: $scope.event.eventTitle,
+            eventDescription: $scope.event.eventDescription,
+            eventPlace: $scope.event.eventPlace,
+            startsAt: new Date($scope.event.startsAt),
+            endsAt: new Date($scope.event.endsAt),
 
         };
+        console.log(newEvent);
         $http({
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
