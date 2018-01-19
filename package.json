@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "angular-moment-picker": "^0.10.1",
+    "express": "^4.15.2",
     "moment": "^2.20.1",
     "mongoose": "^4.13.9"
   }
