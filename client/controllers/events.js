@@ -154,6 +154,8 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
             url: '/api/v1/event/'+id
         }).then(function (success){
             $scope.event = success.data;
+            $scope.event.startsAt=moment(success.data.startsAt);
+            $scope.event.endsAt=moment(success.data.endsAt);
             console.log(success);
         },function (error){
             console.log(error);
