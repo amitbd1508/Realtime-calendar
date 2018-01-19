@@ -1,0 +1,47 @@
+<a href="#/">Go Back</a>
+<div class="panel panel-default" >
+    <div class="panel-heading">
+        <h3 class="panel-title">Add event</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <form ng-submit="addEvent()">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="form-control" ng-model="event.eventTitle" placeholder="Title">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" class="form-control" ng-model="event.eventDescription" placeholder="Description">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Place</label>
+                        <input type="text" class="form-control" ng-model="event.eventPlace" placeholder="Palce">
+                    </div>
+
+                    <div class="form-group" >
+                        <label>Start At</label>
+                        <input class="form-control"
+                               ng-model="event.startsAt"
+                               ng-model-options="{ updateOn: 'blur' }"
+                               placeholder="Select a date..."
+                               moment-picker="event.startsAt">
+                    </div>
+
+                    <div class="form-group" >
+                        <label>END At</label>
+                        <input class="form-control"
+                               ng-model="event.endsAt"
+                               ng-model-options="{ updateOn: 'blur' }"
+                               placeholder="Select a date..."
+                               moment-picker="event.endsAt">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

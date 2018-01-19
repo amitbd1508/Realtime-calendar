@@ -1,3 +1,16 @@
+/*
+* App running on 3000 port 
+* 
+* 
+* API Description
+* GET : /api/v1/event  get all event 
+* POST : /api/v1/event  create an event 
+* PUT :/api/v1/event/:_id   update an event by id
+* DELETE :/api/v1/event/:_id   delete an event by id
+* 
+* 
+* */
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -12,6 +25,16 @@ Event =require('./models/event');
 mongoose.connect('mongodb://localhost/realtime_event_calendar');
 var db = mongoose.connection;
 
+
+
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+    next();
+};
+app.use(allowCrossDomain);
 
 app.get('/', (req, res) => {
     res.send('Please use /api/v1/event');
@@ -56,7 +79,15 @@ app.delete('/api/v1/event/:_id', (req, res) => {
         res.json({'status':'sucess'});
     });
 });
+app.get('/api/v1/event/:_id', (req, res) => {
+    Event.getEventById(req.params._id, (err, event) => {
+        if(err){
+            throw err;
+        }
+        res.json(event);
+    });
+});
 
-app.listen(3000);
-console.log("Running on port 3000");
+app.listen(8000);
+console.log("Running on port 8000");
 

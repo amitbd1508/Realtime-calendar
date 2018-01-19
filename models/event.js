@@ -1,3 +1,14 @@
+/*
+* Model for Event 
+* 
+* eventTitle
+* eventDescription
+* eventPlace
+* eventTime
+* eventCreateDate
+* eventModifiedDate
+ */
+
 var mongoose=require('mongoose');
 
 //event schema
@@ -17,9 +28,18 @@ var eventSchema=mongoose.Schema({
       type : String,
       require: true
     },
+
     eventCreateDate:{
         type : Date,
         default : Date.now
+    },
+    startsAt:{
+        type:Date,
+        default: Date.now()
+    },
+    endsAt:{
+        type:Date,
+        default :Date.now()
     },
     eventModifiedDate:{
         type : Date,
@@ -29,11 +49,12 @@ var eventSchema=mongoose.Schema({
 });
 var Event =module.exports=mongoose.model('Event',eventSchema);
 
-//get genres
+
 module.exports.getEventById=function(id,callback){
     Event.findById(id,callback);
 
 }
+
 module.exports.getEvents=function(callback,limit){
     Event.find(callback).limit(limit);
 
@@ -43,6 +64,9 @@ module.exports.addEvent=function(event,callback){
 
 }
 
+/*
+* @TODO here i need to work with modified date
+* */
 module.exports.updateEvent = (id, event, options, callback) => {
     var query = {_id: id};
     var update = {
@@ -50,7 +74,9 @@ module.exports.updateEvent = (id, event, options, callback) => {
         eventDescription: event.eventDescription,
         eventPlace: event.eventPlace,
         eventDate: event.eventDate,
-        eventCreateDate: event.eventCreateDate
+        eventCreateDate: event.eventCreateDate,
+        startsAt: event.startsAt,
+        endsAt: event.endsAt
         
     }
     Event.findOneAndUpdate(query, update, options, callback);
