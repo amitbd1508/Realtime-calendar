@@ -9,7 +9,10 @@
   "dependencis": {
     "express": "*",
     "body-parser": "*",
-    "mongoose": "*"
+    "mongoose": "*",
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "bootstrap": "^3.3.6"
   },
   "author": "amit ghosh",
   "license": "ISC",
@@ -18,6 +21,7 @@
     "babel-preset-env": "^1.6.1"
   },
   "dependencies": {
+    "moment": "^2.20.1",
     "mongoose": "^4.13.9"
   }
 }

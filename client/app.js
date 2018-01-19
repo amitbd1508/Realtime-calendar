@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp',['ngRoute']);
+var myApp = angular.module('myApp',['ngRoute','mwl.calendar']);
 
 myApp.config(function($routeProvider){
     $routeProvider
@@ -8,7 +8,7 @@ myApp.config(function($routeProvider){
          })
         .when('/event/add',{
             controller:'EventsController',
-            templateUrl: 'views/add_book.html'
+            templateUrl: 'views/add_event.html'
         })
         .when('/event/edit/:id',{
             controller:'EventController',
