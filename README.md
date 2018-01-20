@@ -1,8 +1,15 @@
 # Realtime-calendar
 
 
-This is a simple calender app using nodejs backend ,angular forntend and mongodb database.
+This is a simple calender app using nodejs backend ,angular forntend and mongodb database. Also implemented soket.io for realtime change.
 ### Features
+* Different calendar view (Day ,Week ,Month, Year)
+* Add , Delete , Edit event
+* Events display in events day
+* Realtime update in every client
+
+## Background
+I started this project without any knowledge of Node , Angular , Mongo. So i research about this and start following a [tutorial] in youtube (https://www.youtube.com/watch?v=eB9Fq9I5ocs). I implemented all the things and try to understand basic of node , mongoose, angular, mongodb 
 
 ## Getting Started
 
