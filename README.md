@@ -19,9 +19,9 @@ I started this project without any knowledge of Node , Angular , Mongo. So i res
 
 First you need to install [Node.js](https://nodejs.org/en/) ,[Mongo DB](https://www.mongodb.com/) in your machine 
 
-*Install Node.js
+* Install Node.js
 
-*Run Mongo DB from your installation directory   
+* Run Mongo DB from your installation directory   
 ```
 mongod
 ```
