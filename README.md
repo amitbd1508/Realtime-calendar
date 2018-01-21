@@ -16,6 +16,13 @@ I started this project without any knowledge of Node , Angular , Mongo. So i res
 ## Requirement Missmatch
 
 
+##  Thought Process
+![Thought Process](https://github.com/amitbd1508/Realtime-calendar/blob/master/realtime-caldender.png?raw=true)
+<p align="center">
+  <img src="https://github.com/amitbd1508/Realtime-calendar/blob/master/realtime-caldender.png?raw=true" width="350"/>
+ 
+</p>
+![Screenshot](https://github.com/amitbd1508/Realtime-calendar/blob/master/realtime-caldender.png?raw=true)
 ## Getting Started
 
 
