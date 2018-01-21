@@ -9,18 +9,21 @@ This is a simple calender app using nodejs backend ,angular forntend and mongodb
 * Realtime update in every client
 
 ## Background
-I started this project without any knowledge of Node , Angular , Mongo. So i research about this and start following a [tutorial] in youtube (https://www.youtube.com/watch?v=eB9Fq9I5ocs). I implemented all the things and try to understand basic of node , mongoose, angular, mongodb 
+I started this project without any knowledge of Node , Angular , Mongo. So i research about this and start following a [tutorial] in youtube (https://www.youtube.com/watch?v=eB9Fq9I5ocs). I implemented all the things and try to understand basic of node , mongoose, angular, mongodb. 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+First you need to install [Node.js](https://nodejs.org/en/) ,[Mongo DB](https://www.mongodb.com/) in your machine 
 
+*Install Node.js
+
+*Run Mongo DB from your installation directory   
 ```
-Give examples
+mongod
 ```
 
 ### Installing
