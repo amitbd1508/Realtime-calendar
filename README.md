@@ -9,7 +9,12 @@ This is a simple calender app using nodejs backend ,angular forntend and mongodb
 * Realtime update in every client
 
 ## Background
-I started this project without any knowledge of Node , Angular , Mongo. So i research about this and start following a [tutorial] in youtube (https://www.youtube.com/watch?v=eB9Fq9I5ocs). I implemented all the things and try to understand basic of node , mongoose, angular, mongodb. 
+I started this project without any knowledge of Node , Angular , Mongo. So i research about this and start following a [tutorial]  (https://www.youtube.com/watch?v=eB9Fq9I5ocs) in youtube. I implemented all the things and try to understand basic of node , mongoose, angular, mongodb. 
+
+## Requirement
+
+## Requirement Missmatch
+
 
 ## Getting Started
 
@@ -27,73 +32,63 @@ mongod
 ```
 
 ### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
+* Clone the repository
 ```
-Give the example
+git clone https://github.com/amitbd1508/Realtime-calendar.git
+```
+* Then Change your dricatory using 
+```
+cd Realtime-calendar
+```
+* Run 
+```
+npm install
+node app.js
 ```
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+App running on [http://localhost:8000/](http://localhost:8000/)
 
 ## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+I didn't write any test code . In future i will add the test code 
 
 ## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Node.js](https://nodejs.org/en/) 
+* [Mongo DB](https://www.mongodb.com/)
+* [Bootstrap](https://getbootstrap.com/)
+* [angular-bootstrap-calendar](https://github.com/mattlewis92/angular-bootstrap-calendar) - Calendar Library
+* [Socket](https://socket.io/) - Socket Library 
+* [Expressjs](https://expressjs.com/) - Fast, unopinionated, minimalist web framework for Node.js
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+You are welcome to contribute
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 
-* **Amit Ghosh** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Amit Ghosh** -  [Website](www.amitghosh.me)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/amitbd1508/Realtime-calendar/graphs/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under ISC License
+
+Copyright (c) [2018], [Amit Ghosh]
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* Thanks to [Traversy Media](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA)
+* Thanks Jeeon for giving me the idea  
