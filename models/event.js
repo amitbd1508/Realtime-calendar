@@ -29,10 +29,7 @@ var eventSchema=mongoose.Schema({
       require: true
     },
 
-    eventCreateDate:{
-        type : Date,
-        default : Date.now
-    },
+
     startsAt:{
         type:Date,
         default: Date.now()
@@ -40,6 +37,10 @@ var eventSchema=mongoose.Schema({
     endsAt:{
         type:Date,
         default :Date.now()
+    },
+    eventCreateDate:{
+        type : Date,
+        default : Date.now
     },
     eventModifiedDate:{
         type : Date,

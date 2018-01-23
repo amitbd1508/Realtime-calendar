@@ -17,7 +17,34 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
     //reload fire when any client write their change in database
     socket.on('reload', function(msg){
         //when any change occour on database the a reload event happened
-        window.location.href='#/';
+        $http({
+            method: 'GET',
+            url: '/api/v1/event'
+        }).then(function (success){
+            var response = success.data;
+            console.log(success);
+            //loop through the response for formatting data to set in the calender
+            $scope.events=[];
+            for (let i = 0; i < response.length; i++) {
+
+                $scope.events.push(
+                    {
+                        id: response[i]._id,
+                        title: response[i].eventTitle,
+                        color: calendarConfig.colorTypes.warning,
+                        startsAt: moment(response[i].startsAt),
+                        endsAt: moment(response[i].endsAt),
+                        draggable: true,
+                        actions: actions,
+                        resizable: true
+                    }
+                );
+            }
+
+
+        },function (error){
+            console.log(error);
+        });
 
     });
 
@@ -32,16 +59,12 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
 
     //coustom calender type changer
     $scope.changeCalenderView = function(viewType) {
-        //alert.show('Clicked', event);
-        console.log(event);
         $scope.calendarView=viewType
     };
-    $scope.dateClicked = function(viewType) {
-        //alert.show('Clicked', event);
-        console.log("sdfsdf");
 
+    $scope.eventClicked = function(event) {
+        window.location.href='#!/event/update/'+event.id;
     };
-
     //on calendar add edit and delete button
     var actions = [{
         label: '<i class=\'glyphicon glyphicon-plus\'></i>',
@@ -97,7 +120,6 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
     }
 
 
-
     //api call for add an event
     $scope.addEvent = function(){
         console.log($scope.event);
@@ -125,6 +147,7 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
             eventPlace: $scope.event.eventPlace,
             startsAt: new Date($scope.event.startsAt),
             endsAt: new Date($scope.event.endsAt),
+            eventModifiedDate : $scope.eventModifiedDate
 
         };
         console.log(newEvent);
