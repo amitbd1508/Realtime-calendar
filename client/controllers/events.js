@@ -11,8 +11,8 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
     })();
 
 
-
     //initaliazing soket
+    //{transports: ['websocket'], upgrade: false}
     var  socket= io('http://localhost:9000/',{transports: ['websocket'], upgrade: false});
     //reload fire when any client write their change in database
     socket.on('reload', function(msg){
@@ -35,6 +35,11 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
         //alert.show('Clicked', event);
         console.log(event);
         $scope.calendarView=viewType
+    };
+    $scope.dateClicked = function(viewType) {
+        //alert.show('Clicked', event);
+        console.log("sdfsdf");
+
     };
 
     //on calendar add edit and delete button
@@ -146,9 +151,6 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
             url: '/api/v1/event/'+id
         }).then(function (success){
             $scope.event = success.data;
-            $scope.event.startsAt=moment(success.data.startsAt);
-            $scope.event.endsAt=moment(success.data.endsAt);
-            console.log(success);
         },function (error){
             console.log(error);
         });
@@ -161,7 +163,6 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
             url: '/api/v1/event/'+id
         }).then(function (success){
             $scope.events = success.data;
-            console.log(success);
             window.location.href='#/';
         },function (error){
             console.log(error);

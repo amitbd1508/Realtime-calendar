@@ -1,3 +1,4 @@
+
 <div ng-init="getEvents()">
     <h2 class="text-center">{{ calendarTitle }}</h2>
 
@@ -56,11 +57,11 @@
             on-event-click="eventClicked(calendarEvent)"
             on-event-times-changed="eventTimesChanged(calendarEvent); calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
             cell-is-open="cellIsOpen"
-            day-view-start="06:00"
-            day-view-end="22:59"
+            day-view-start="00:00"
+            day-view-end="23:59"
             day-view-split="30"
-            cell-modifier="modifyCell(calendarCell)"
-            cell-auto-open-disabled="true"
+
+            cell-auto-open-disabled="false"
             on-timespan-click="timespanClicked(calendarDate, calendarCell)">
     </mwl-calendar>
 
