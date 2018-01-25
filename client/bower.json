@@ -1,0 +1,21 @@
+{
+  "name": "Event-Calendar-Client",
+  "homepage": "https://github.com/amitbd1508/Realtime-calendar",
+  "authors": [
+    "Amit Ghosh <amitbd1508@gmail.com>"
+  ],
+  "description": "This is the Event calendar clint app",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap-calendar": "^1.0.0",
+    "angular-route": "^1.6.8"
+  }
+}
