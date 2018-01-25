@@ -1,25 +1,26 @@
 # Event Calendar
 
 
-This is a simple calender app using nodejs backend ,angular forntend and mongodb database. Also implemented soket.io for realtime change.
+This is a simple calendar app using nodejs backend, angular frontend and mongodb database. Also implemented soket.io for real-time change.
 ### Features
-* Different calendar view (Day ,Week ,Month, Year)
-* Add , Delete , Edit event
+* Different calendar view (Day, Week ,Month, Year)
+* Add, Delete , Edit event
 * Events display in events day
-* Realtime update in every client
+* Real-time update in every client
 
 ## Background
-I started this project without any knowledge of Node , Angular , Mongo. So i research about this and start following a [tutorial]  (https://www.youtube.com/watch?v=eB9Fq9I5ocs) in youtube. I implemented all the things and try to understand basic of node , mongoose, angular, mongodb. When i start impilimenting i face many problem like: 
+I started this project without any knowledge of Node , Angular , Mongo. So i research about this and start following a [tutorial](https://www.youtube.com/watch?v=eB9Fq9I5ocs) in YouTube. I implemented all the things and try to understand basic of node , mongoose, angular, mongodb. When i start implementing i face many problem like: 
 * href not working from angular (solve putting a extra `!` -  `#/event/add` to `#!/event/add` )
-* Socket connect multiple time ( solved by adding `{transports: ['websocket'], upgrade: false}`
+* Socket connect multiple time (solved by adding `{transports: ['websocket'], upgrade: false}`
 * Http call from client not working as video ( solved by a new method )
-* 
+* Have huge confusion between ES6 and ES5 . I see the syntax of es6 but cannot implemented it 
+* and so on 
 ## Requirement
 * Single-page web application using AngularJS (frontend layer)
 *  REST API NodeJS application using Express for adding, editing, or removing an event (backend layer)
 *  Main view shall consist of a calendar of a month, with “next” and “previous” buttons to go to another month
-*  A  "+" button inside every inside the datebox for addingan event (partially completed)
-*  Realtime update to all opened browser using socket io
+*  A  "+" button inside every inside the date box for adding an event (partially completed)
+*  Real-time update to all opened browser using socket io
 *  Keep track of when an event was created and updated
 ##  Thought Process
 ![Thought Process](https://github.com/amitbd1508/Realtime-calendar/blob/master/realtime-caldender.png?raw=true)
@@ -49,9 +50,9 @@ mongod
 ```
 git clone https://github.com/amitbd1508/Realtime-calendar.git
 ```
-* Then Change your dricatory using 
+* Then Change your directory using 
 ```
-cd Realtime-calendar
+cd Real-time-calendar
 ```
 * Run 
 ```
