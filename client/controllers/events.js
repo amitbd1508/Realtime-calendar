@@ -41,7 +41,6 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
                 );
             }
 
-
         },function (error){
             console.log(error);
         });
@@ -96,7 +95,6 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
             url: '/api/v1/event'
         }).then(function (success){
             var response = success.data;
-            console.log(success);
             //loop through the response for formatting data to set in the calender
             for (let i = 0; i < response.length; i++) {
                 $scope.events.push(
@@ -131,7 +129,6 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
         }).then(function (success){
             $scope.events = success.data;
             console.log(success);
-
             window.location.href='#/';
         },function (error){
             console.log(error);
@@ -147,10 +144,10 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
             eventPlace: $scope.event.eventPlace,
             startsAt: new Date($scope.event.startsAt),
             endsAt: new Date($scope.event.endsAt),
-            eventModifiedDate : $scope.eventModifiedDate
+            eventCreateDate : $scope.eventCreateDate,
 
         };
-        console.log(newEvent);
+        console.log("New Event",newEvent);
         $http({
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
@@ -174,6 +171,7 @@ myApp.controller('EventsController', ['$scope', '$http', '$location', '$routePar
             url: '/api/v1/event/'+id
         }).then(function (success){
             $scope.event = success.data;
+            console.log("Event data",success.data);
         },function (error){
             console.log(error);
         });

@@ -6,20 +6,20 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-md-12">
-                <form ng-submit="updateEvent()" >
+                <form ng-submit="updateEvent()" novalidate >
                     <div class="form-group">
                         <label>Title</label>
-                        <input type="text" class="form-control" ng-model="event.eventTitle" placeholder="Title" ng-minlength="5" required>
+                        <input type="text" class="form-control" ng-model="event.eventTitle" placeholder="Title"  required>
                         <span ng-show="!event.eventTitle">* Required</span>
                     </div>
                     <div class="form-group">
                         <label>Description</label>
-                        <input type="text" class="form-control" ng-model="event.eventDescription" placeholder="Description" ng-minlength="5" required>
+                        <input type="text" class="form-control" ng-model="event.eventDescription" placeholder="Description"  required>
                         <span ng-show="!event.eventDescription">* Required</span>
                     </div>
                     <div class="form-group">
                         <label>Place</label>
-                        <input type="text" class="form-control" ng-model="event.eventPlace" placeholder="Place" ng-minlength="5">
+                        <input type="text" class="form-control" ng-model="event.eventPlace" placeholder="Place"  required>
                         <span ng-show="!event.eventPlace">* Required</span>
                     </div>
 
@@ -28,8 +28,9 @@
                         <label>New Start Time</label>
                         <input class="form-control"
                                ng-model="event.startsAt"
+                               required
                                ng-model-options="{ updateOn: 'blur' }"
-                               placeholder="Select a date..."
+                               placeholder="Select A Date"
                                moment-picker="event.startsAt">
                         <span ng-show="!event.startsAt">* Required</span>
                     </div>
@@ -38,9 +39,9 @@
                         <label>New End Date</label>
                         <input class="form-control"
                                ng-model="event.endsAt"
-                               ng-pattern="^\d{1,2}\/\d{1,2}\/\d{4}$"
                                ng-model-options="{ updateOn: 'blur' }"
-                               placeholder="Select a date..."
+                               placeholder="Select A Date"
+                               required
                                moment-picker="event.endsAt">
                         <span ng-show="!event.endsAt">* Required</span>
                     </div>
@@ -60,7 +61,10 @@
                                disabled
                                >
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" class="btn btn-default"
+                            ng-disabled="!event.startsAt || !event.endsAt || !event.eventPlace || !event.eventDescription || !event.eventTitle">
+                        Submit
+                    </button>
                 </form>
             </div>
         </div>
