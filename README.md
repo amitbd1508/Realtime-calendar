@@ -58,6 +58,10 @@ cd Real-time-calendar
 ```
 npm install
 node app.js
+cd client
+bower install
+cd ..
+node app.js
 ```
 
 App running on [http://localhost:8000/](http://localhost:8000/)
