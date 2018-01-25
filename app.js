@@ -49,7 +49,7 @@ io.on('connection', function(socket){
 
 //soket initialization
 http.listen(port, function(){
-    console.log('listening on *:' + port);
+    console.log('Socket listening on *:' + port);
 });
 
 /*

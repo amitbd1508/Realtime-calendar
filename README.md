@@ -52,12 +52,11 @@ git clone https://github.com/amitbd1508/Realtime-calendar.git
 ```
 * Then Change your directory using 
 ```
-cd Real-time-calendar
+cd Realtime-calendar/
 ```
 * Run 
 ```
 npm install
-node app.js
 cd client
 bower install
 cd ..
