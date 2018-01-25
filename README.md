@@ -1,4 +1,4 @@
-# Realtime-calendar
+# Event Calendar
 
 
 This is a simple calender app using nodejs backend ,angular forntend and mongodb database. Also implemented soket.io for realtime change.
@@ -9,23 +9,29 @@ This is a simple calender app using nodejs backend ,angular forntend and mongodb
 * Realtime update in every client
 
 ## Background
-I started this project without any knowledge of Node , Angular , Mongo. So i research about this and start following a [tutorial]  (https://www.youtube.com/watch?v=eB9Fq9I5ocs) in youtube. I implemented all the things and try to understand basic of node , mongoose, angular, mongodb. 
-
+I started this project without any knowledge of Node , Angular , Mongo. So i research about this and start following a [tutorial]  (https://www.youtube.com/watch?v=eB9Fq9I5ocs) in youtube. I implemented all the things and try to understand basic of node , mongoose, angular, mongodb. When i start impilimenting i face many problem like: 
+* href not working from angular (solve putting a extra `!` -  `#/event/add` to `#!/event/add` )
+* Socket connect multiple time ( solved by adding `{transports: ['websocket'], upgrade: false}`
+* Http call from client not working as video ( solved by a new method )
+* 
 ## Requirement
-
-## Requirement Missmatch
-
-
+* Single-page web application using AngularJS (frontend layer)
+*  REST API NodeJS application using Express for adding, editing, or removing an event (backend layer)
+*  Main view shall consist of a calendar of a month, with “next” and “previous” buttons to go to another month
+*  A  "+" button inside every inside the datebox for addingan event (partially completed)
+*  Realtime update to all opened browser using socket io
+*  Keep track of when an event was created and updated
 ##  Thought Process
 ![Thought Process](https://github.com/amitbd1508/Realtime-calendar/blob/master/realtime-caldender.png?raw=true)
-<p align="center">
-  <img src="https://github.com/amitbd1508/Realtime-calendar/blob/master/realtime-caldender.png?raw=true" width="350"/>
- 
-</p>
-![Screenshot](https://github.com/amitbd1508/Realtime-calendar/blob/master/realtime-caldender.png?raw=true)
-## Getting Started
 
 
+### Used Technology
+1. Mongo Database
+2. Mongoose ODM
+3. Express Application Framework
+4. AngularJS Framework
+5. Bootstrap CSS Framework
+7. Socket IO
 
 ### Prerequisites
 
@@ -33,7 +39,7 @@ First you need to install [Node.js](https://nodejs.org/en/) ,[Mongo DB](https://
 
 * Install Node.js
 
-* Run Mongo DB from your installation directory   
+* Install and Run Mongo DB from your installation directory   
 ```
 mongod
 ```
@@ -56,15 +62,16 @@ node app.js
 App running on [http://localhost:8000/](http://localhost:8000/)
 
 ## Running the tests
-I didn't write any test code . In future i will add the test code 
+I don not write any test code . In future i will add the test code 
 
 ## Built With
 * [Node.js](https://nodejs.org/en/) 
+* [Expressjs](https://expressjs.com/) - Fast, unopinionated, minimalist web framework for Node.js
 * [Mongo DB](https://www.mongodb.com/)
 * [Bootstrap](https://getbootstrap.com/)
 * [angular-bootstrap-calendar](https://github.com/mattlewis92/angular-bootstrap-calendar) - Calendar Library
 * [Socket](https://socket.io/) - Socket Library 
-* [Expressjs](https://expressjs.com/) - Fast, unopinionated, minimalist web framework for Node.js
+
 
 ## Contributing
 
