@@ -24,7 +24,7 @@ var port = 9000;
 Event =require('./models/event');
 
 // Connect to Mongoose
-mongoose.connect('mongodb://localhost/realtime_event_calendar');
+mongoose.connect('mongodb://admin:admin@ds223609.mlab.com:23609/my-mongdb');
 var db = mongoose.connection;
 
 
