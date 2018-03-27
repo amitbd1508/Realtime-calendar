@@ -19,12 +19,12 @@ const mongoose = require('mongoose');
 //socket variable
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-var port = 9000;
+var port = process.env.PORT||9000;
 
 Event =require('./models/event');
 
 // Connect to Mongoose
-mongoose.connect('mongodb://localhost/realtime_event_calendar');
+mongoose.connect('mongodb://admin:admin@ds223609.mlab.com:23609/my-mongdb');
 var db = mongoose.connection;
 
 
@@ -116,6 +116,6 @@ app.get('/api/v1/event/:_id', (req, res) => {
 });
 
 
-app.listen(8000);
+
 console.log("Running on port 8000");
 
